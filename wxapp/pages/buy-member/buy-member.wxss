@@ -1,0 +1,70 @@
+.user-info {
+    height:160rpx;
+    background:linear-gradient(270deg,rgba(51,49,48,1),rgba(67,64,62,1));
+}
+
+.user-info .avatar-block {
+    width: 130rpx;
+    margin-left: 30rpx;
+}
+
+.user-info .avatar {
+    width:100rpx;
+    height:100rpx;
+    border-radius:50%;
+}
+
+.user-name {
+    color:#ffffff;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+
+.user-level {
+    border:1rpx solid #FCBE51;
+    border-radius:15rpx;
+    font-size: 18rpx;
+    color: #FCBE51;
+    margin-left: 30rpx;
+    margin-top:3rpx;
+    padding: 5rpx;
+    height:35rpx;
+}
+
+.user-end-date {
+    font-size:20rpx;
+    color:rgba(254,254,254,1);
+    opacity:0.6;
+}
+
+.price-item {
+    width:180rpx;
+    height:180rpx;
+    margin:10rpx;
+    background:linear-gradient(0deg,rgba(229,229,229,1),rgba(248,248,248,1));
+    border-radius:6px;
+}
+.price-item.active {
+    background:linear-gradient(0deg,rgba(246,229,186,1),rgba(254,247,229,1));
+}
+
+.pay {
+    height:88rpx;
+    background:linear-gradient(180deg,rgba(252,190,81,1),rgba(249,213,151,1));
+    box-shadow:0rpx 2rpx 6rpx 0rpx rgba(252,191,84,0.55);
+    border-radius:44rpx;
+}
+.now-price {
+    font-family: PingFang-SC-Bold;
+    font-size: 30rpx;
+    color:#333333;
+}
+
+.origin-price {
+    font-family: PingFang-SC-Bold;
+    padding-top: 10rpx;
+    padding-left: 5rpx;
+    font-size: 22rpx;
+    text-decoration:line-through;
+    color:#999999;
+}

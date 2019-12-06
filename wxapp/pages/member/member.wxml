@@ -1,0 +1,114 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view style="height:100%;background:#F5F5F5">
+
+            <view class="flex-row user-info">
+                <view class="flex-row">
+                    <view class="flex-grow-0 avatar-block">
+                        <image class="avatar" src="{{user_info.avatar_url}}"></image>
+                    </view>
+                    <view class="flex-grow-0 user-name-row">
+                        <text class="user-name">{{user_info.nickname}}</text>
+                    </view>
+                    <view class="flex-grow-0">
+                        <view class="user-level flex-row">
+                            <view class="flex-y-center" style="height:30rpx">{{user_info.level_name||'普通用户'}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="vip-block" style="position:absolute;top:180rpx;left:25rpx;right: 25rpx;bottom: 10rpx;">
+                <view class="flex-row flex-x-center flex-y-center" style="height: 35rpx;width: 100%;margin-top: 30rpx;">
+                    <text class="quanyi">懂家优享会员 享4大权益</text>
+                </view>
+                <view class="flex-row" style="margin-top: 30rpx;width: 100%">
+                    <view class="flex-grow-0" style="width: 25%;">
+                        <view class="option-item flex-grow-0">
+                            <view class="flex-x-center">
+                                <image class="option-icon" src="{{__wxapp_img.vip.quanyi_1}}"></image>
+                            </view>
+                            <view class="text-more-2 option-name">超级会员日</view>
+                        </view>
+                    </view>
+                    <view class="flex-grow-0" style="width: 25%;">
+                        <view class="option-item flex-grow-0">
+                            <view class="flex-x-center">
+                                <image class="option-icon" src="{{__wxapp_img.vip.quanyi_2}}"></image>
+                            </view>
+                            <view class="text-more-2 option-name">黑卡专享价</view>
+                        </view>
+                    </view>
+                    <view class="flex-grow-0" style="width: 25%;">
+                        <view class="option-item flex-grow-0">
+                            <view class="flex-x-center">
+                                <image class="option-icon" src="{{__wxapp_img.vip.quanyi_3}}"></image>
+                            </view>
+                            <view class="text-more-2 option-name">专享商品</view>
+                        </view>
+                    </view>
+                    <view class="flex-grow-0" style="width: 25%;">
+                        <view class="option-item flex-grow-0">
+                            <view class="flex-x-center">
+                                <image class="option-icon" src="{{__wxapp_img.vip.quanyi_4}}"></image>
+                            </view>
+                            <view class="text-more-2 option-name">专属客服</view>
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="buyMember" style="margin-top: 30rpx;margin-left: 30rpx;margin-right: 30rpx;" class="flex-row flex-x-center flex-y-center kaitong">
+                    <view style="color:#534937;font-size: 30rpx;font-weight: bold;">
+                        <text wx:if="{{user_info.level > 0}}">立即续费</text>
+                        <text wx:else>立即开通优享会员</text>
+                    </view>
+                </view>
+            </view>
+
+            <view class="quanyi-list">
+                <view class="quanyi-item">
+                    <view class="flex-row item-title flex-y-center"> <text style="font-weight:bold;">超级会员日</text><text class="sub-title">  / 专属购物节</text></view>
+                    <view class="flex-row flex-x-center flex-y-center">
+                        <view class="flex-y-center" style="width:630rpx;height:130rpx;background-image: url('{{__wxapp_img.vip.item.item_1_bg}}');background-repeat:no-repeat;background-size:cover;">
+                            <text style="padding-left: 40rpx;color: #FF6464;font-weight: bold;font-size: 24rpx;">每月18号到20号重磅上线 仅限黑卡会员专享</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="quanyi-item">
+                    <view class="flex-row item-title flex-y-center"> <text style="font-weight:bold;">黑卡专享价</text><text class="sub-title">  / 省钱省心</text></view>
+                    <view class="flex-row flex-x-center flex-y-center">
+                        <view class="flex-y-center" style="width:630rpx;height:130rpx;background-image: url('{{__wxapp_img.vip.item.item_2_bg}}');background-repeat:no-repeat;background-size:cover;">
+                            <text style="padding-left: 40rpx;color: #FF6464;font-weight: bold;font-size: 24rpx;">仅黑卡会员可享受专属会员价</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="quanyi-item">
+                    <view class="flex-row item-title flex-y-center"> <text style="font-weight:bold;">黑卡专享商品</text> <text class="sub-title"> / 专享商品</text></view>
+                    <view class="flex-row flex-x-center flex-y-center">
+                        <view class="flex-y-center" style="width:630rpx;height:130rpx;background-image: url('{{__wxapp_img.vip.item.item_3_bg}}');background-repeat:no-repeat;background-size:cover;">
+                            <text style="padding-left: 40rpx;color: #FF6464;font-weight: bold;font-size: 24rpx;">黑卡专享商品仅限黑卡会员专享</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="quanyi-item">
+                    <view class="flex-row item-title flex-y-center"> <text style="font-weight:bold;">专属客服</text><text class="sub-title">  /  专人专线</text></view>
+                    <view class="flex-row flex-x-center flex-y-center">
+                        <view class="flex-y-center" style="width:630rpx;height:130rpx;background-image: url('{{__wxapp_img.vip.item.item_4_bg}}');background-repeat:no-repeat;background-size:cover;">
+                            <text style="padding-left: 40rpx;color: #FF6464;font-weight: bold;font-size: 24rpx;">专属客服权益仅限黑卡会员专享</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="buyMember" style="width: 100%;margin-left: 25rpx;margin-right: 25rpx;">
+                <view style="margin:30rpx;" class="flex-row flex-x-center flex-y-center kaitong">
+                    <view style="color:#534937;font-size: 30rpx;font-weight: bold;">
+                        <text wx:if="{{user_info.level > 0}}">立即续费</text>
+                        <text wx:else>立即开通优享会员</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+<include src="/components/footer/footer"></include>
+</view>

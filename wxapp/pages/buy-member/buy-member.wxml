@@ -1,0 +1,49 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="flex-row user-info">
+            <view class="flex-row-0 avatar-block flex-y-center">
+                <image class="avatar" src="{{user_info.avatar_url}}"></image>
+            </view>
+            <view class="flex-row-0 flex-x-center flex-col">
+                <view class="flex-row">
+                    <view class="user-name">{{user_info.nickname}}</view>
+                    <view class="user-level">{{user_info.level_name||'普通用户'}}</view>
+                </view>
+                <view class="flex-row" style="padding: 5rpx;" wx:if="{{user_info.vip_end_time>0}}">
+                    <view class="user-end-date">{{user_info.vip_end_date}} 会员到期</view>
+                </view>
+            </view>
+        </view>
+        <view class="flex-row" style="margin-left: 30rpx;margin-top: 40rpx;margin-bottom: 10rpx;margin-right: 30rpx;">
+            <text style="color:#333333;font-size: 30rpx;font-weight: bold;">选择会员套餐</text>
+        </view>
+        <view class="flex-row" style="margin-left: 20rpx;margin-right: 20rpx;">
+            <scroll-view scrollX="true">
+                <view class="flex-row">
+                    <block wx:for="{{price_list}}" wx:for-index="price_index" wx:for-item="price">
+                        <view bindtap="selectItem" data-key="{{price.key}}" data-price="{{price.price}}" class="flex-grow-0 price-item flex-x-center flex-y-center flex-col {{select_key == price.key ? 'active' : ''}}">
+                            <view class="flex-row">
+                                {{price.title}}
+                            </view>
+                            <view class="flex-row">
+                                <text class="now-price">￥{{price.price}}</text>
+                                <text class="origin-price">￥{{price.origin}}</text>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+            </scroll-view>
+        </view>
+
+        <view class="flex-row" style="margin-left: 30rpx;margin-top: 40rpx;margin-bottom: 10rpx;margin-right: 30rpx;">
+            <text style="color:#333333;font-size: 30rpx;font-weight: bold;">需要支付: ￥{{select_price}}元</text>
+        </view>
+
+        <view bindtap="payMember" style="margin:30rpx;" class="flex-row flex-x-center flex-y-center pay">
+            <text style="color:#534937;font-size: 30rpx;font-weight: bold;">立即支付</text>
+        </view>
+
+    </view>
+</view>
